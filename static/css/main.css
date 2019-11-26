@@ -1,0 +1,12 @@
+body {
+    background-color: burlywood;
+}
+
+.t1, th, td {
+    border: 1px solid black;
+}
+.content, table {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
