@@ -22,6 +22,19 @@ def get_month_dates():
     #clean up this mongrel code
     return dates_in_month
 
+#gets a number of workweeks starting with date param, defaults to today
+def get_workweeks(numweeks, today = datetime.date.today()):
+    #confirm that param is valid int
+
+    #clean this mongrel code
+    workweeks = []
+    tdlt = 0
+    for week in range(numweeks):
+        workweeks.append(get_workweek(today+datetime.timedelta(days=tdlt)))
+        tdlt += 7
+    return workweeks
+
+#this can be generalized to any number of weeks give as parameter
 def get_workmonth(today = datetime.date.today()):
     #clean this mongrel code. timedelta(weeks=1) is probably an option
     ww1 = get_workweek(today)
