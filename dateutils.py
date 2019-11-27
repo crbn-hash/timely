@@ -22,6 +22,19 @@ def get_month_dates():
     #clean up this mongrel code
     return dates_in_month
 
+def get_workmonth(today = datetime.date.today()):
+    #clean this mongrel code. timedelta(weeks=1) is probably an option
+    ww1 = get_workweek(today)
+    ww2 = get_workweek(today+datetime.timedelta(days=7))
+    ww3 = get_workweek(today+datetime.timedelta(days=14))
+    ww4 = get_workweek(today+datetime.timedelta(days=21))
+    workmonth = []
+    workmonth.extend(ww1)
+    workmonth.extend(ww2)
+    workmonth.extend(ww3)
+    workmonth.extend(ww4)
+    return workmonth
+    
 def get_workweek(today = datetime.date.today()):
 
     days_in_week = 7
