@@ -22,11 +22,10 @@ def get_month_dates():
     #clean up this mongrel code
     return dates_in_month
 
-def get_workweek():
+def get_workweek(today = datetime.date.today()):
 
     days_in_week = 7
     weekdays = []
-    today = datetime.date.today()
     tdelta = datetime.timedelta(days=today.weekday())
     monday = today - tdelta
 
