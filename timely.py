@@ -18,8 +18,8 @@ shift_employee_table = db.Table('shift-employees', db.Column('shift_id',db.Integ
 
 class Employee(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
-    username = db.Column(db.String(255), unique=True)
-    password = db.Column(db.String(255))
+    username = db.Column(db.String(255), unique=True)#notnull
+    password = db.Column(db.String(255))#notnull
     email = db.Column(db.String(255))
 
     def __init__(self, username):
@@ -46,9 +46,10 @@ class Schedule(db.Model):
 
 class Shift(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
-    title = db.Column(db.String(255))
-    #start_dt = db.Column(db.DateTime())
-    #end_dt = db.Column(db.DateTime())
+    title = db.Column(db.String(255))#notnull
+    start_dt = db.Column(db.DateTime())#notnull
+    end_dt = db.Column(db.DateTime())#notnull
+    #sqlite3 may not enforce this constraint - check to make sure prod db does
     schedule_id = db.Column(db.Integer(), db.ForeignKey('schedule.id'))
     
     employees = db.relationship (
@@ -63,15 +64,20 @@ class Shift(db.Model):
     def __repr__(self):
         return "<Shift '{}'>".format(self.title)
 
+class ScheduleView(ModelView):
+    column_list =['title', 'shifts']
+    column_editable_list=['title', 'shifts']
+    edit_modal=True
 class ShiftView(ModelView):
-    column_list = ['title', 'schedule', 'employees']
+    column_list = ['title','start_dt', 'end_dt', 'schedule', 'employees']
     column_editable_list=['title']
     edit_modal=True
 class EmployeeView(ModelView):
     column_list = ['username', 'shifts', 'email']
     column_editable_list=['username', 'email']
     edit_modal=True
-
+    
+admin.add_view(ScheduleView(Schedule, db.session))
 admin.add_view(ShiftView(Shift, db.session))
 admin.add_view(EmployeeView(Employee, db.session))
 
