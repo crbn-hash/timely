@@ -4,6 +4,7 @@ from config import DevConfig
 import datetime
 from flask_admin import Admin 
 from flask_admin.contrib.sqla import ModelView
+import dateutils
 
 
 app = Flask(__name__)
@@ -70,13 +71,13 @@ class ScheduleView(ModelView):
     edit_modal=True
 class ShiftView(ModelView):
     column_list = ['title','start_dt', 'end_dt', 'schedule', 'employees']
-    column_editable_list=['title']
+    column_editable_list=['title', 'start_dt', 'end_dt']
     edit_modal=True
 class EmployeeView(ModelView):
     column_list = ['username', 'shifts', 'email']
     column_editable_list=['username', 'email']
     edit_modal=True
-    
+
 admin.add_view(ScheduleView(Schedule, db.session))
 admin.add_view(ShiftView(Shift, db.session))
 admin.add_view(EmployeeView(Employee, db.session))
@@ -87,21 +88,14 @@ def index():
     return render_template('index.html')
 
 @app.route('/schedule')
-def schedule():
-    days_in_week = 7
-    weekdays = []
-    today = datetime.date.today()
-    tdelta = datetime.timedelta(days=today.weekday())
-    monday = today - tdelta
-
-    for day in range(days_in_week):
-        weekdays.append(monday + datetime.timedelta(days=day))
-    return render_template('schedule.html', weekdays=weekdays)
+def schedule2():
+    WEEKS_IN_MONTH = 4
+    month = dateutils.get_workweeks(WEEKS_IN_MONTH)
+    shifts = Shift.query.all()
+    return (render_template('schedule.html',shifts=shifts,month=month, weekdays=month[0]))
 
 if __name__ == "__main__":
     app.run(debug=True) 
-
-
 # @event.listens_for(Engine, "connect")
 # def set_sqlite_pragma(dbapi_connection, connection_record):
 #     cursor = dbapi_connection.cursor()
