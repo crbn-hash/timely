@@ -19,13 +19,18 @@
         {% for week in month %}
             <tr>
             {% for day in week %}
-                <td>{{day}}</td>
+                <td>
+                    {{day}}
+                    {% for shift in shifts %}
+                        {% if shift.start_dt.day == day.day %}
+                        <br>
+                        {{shift.title}}
+                        {% endif %}
+                    {% endfor %}
+                </td> 
             {% endfor %}
             </tr>
         {% endfor %}
-        <tr>
-            <!--Add Shifts Jinja loop here-->
-        </tr>
     </table>
 </div>
 
