@@ -10,20 +10,16 @@
     <table class='table table-bordered table-secondary'>
         <tr>
         {% for date in weekdays %}
-            {% if date.weekday() == today.weekday() %}
-            <th class="highlight">{{date.strftime("%A")}}</th>
-            {% else %}
             <th>{{date.strftime("%A")}}</th>
-            {% endif %}
         {% endfor %}
         </tr>
         {% for week in month %}
             <tr>
             {% for day in week %}
-                {% if day.weekday() == today.weekday() %}
+                {% if day == today %}
                     <td class='highlight'>
                 {% else %}
-                    <td>
+                    <td style='white-space:nowrap;'>
                 {% endif %}
                     {{day.strftime("%b")}} {{day.day}}
                     {% for shift in shifts %}
