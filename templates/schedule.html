@@ -7,24 +7,31 @@
 {% block leftbody %}
 
 <div class='content'>
-    <h1>Month Schedule</h1>
-
-    <table class='table table-bordered table-dark'>
+    <table class='table table-bordered table-secondary'>
         <tr>
         {% for date in weekdays %}
+            {% if date.weekday() == today.weekday() %}
+            <th class="highlight">{{date.strftime("%A")}}</th>
+            {% else %}
             <th>{{date.strftime("%A")}}</th>
+            {% endif %}
         {% endfor %}
         </tr>
         {% for week in month %}
             <tr>
             {% for day in week %}
-                <td>
-                    {{day}}
+                {% if day.weekday() == today.weekday() %}
+                    <td class='highlight'>
+                {% else %}
+                    <td>
+                {% endif %}
+                    {{day.strftime("%b")}} {{day.day}}
                     {% for shift in shifts %}
                         {% if shift.start_dt.day == day.day %}
                         <br>
-                        {{shift.title}}
-                        <br>
+                        <div class="alert alert-warning" role="alert">
+                              {{shift.title}}
+                        </div>
                             {% for emp in shift.employees %}
                                 {{emp.username}}
                                 <br>
@@ -37,5 +44,5 @@
         {% endfor %}
     </table>
 </div>
-
+<script src='../static/js/main.js'></script>
 {% endblock %}

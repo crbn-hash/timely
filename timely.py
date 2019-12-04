@@ -16,6 +16,7 @@ admin = Admin(app)
 
 
 shift_employee_table = db.Table('shift-employees', db.Column('shift_id',db.Integer(), db.ForeignKey('shift.id')), db.Column('employee_id',db.Integer(), db.ForeignKey('employee.id')))
+schedule_shift_table = db.Table('schedule-shifts', db.Column('schedule_id', db.Integer(), db.ForeignKey('schedule.id')), db.Column('shift_id', db.Integer(), db.ForeignKey('shift.id')))
 
 class Employee(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
@@ -35,7 +36,8 @@ class Schedule(db.Model):
     #__tablename__ = 'Schedule'
     shifts = db.relationship(
         'Shift',
-        backref='schedule',
+        secondary=schedule_shift_table,
+        backref= db.backref('schedules')
         #lazy='dynamic'
     )
 
@@ -52,6 +54,7 @@ class Shift(db.Model):
     end_dt = db.Column(db.DateTime())#notnull
     #sqlite3 may not enforce this constraint - check to make sure prod db does
     schedule_id = db.Column(db.Integer(), db.ForeignKey('schedule.id'))
+    
     
     employees = db.relationship (
         'Employee',
@@ -70,12 +73,12 @@ class ScheduleView(ModelView):
     column_editable_list=['title', 'shifts']
     edit_modal=True
 class ShiftView(ModelView):
-    column_list = ['title','start_dt', 'end_dt', 'schedule', 'employees']
-    column_editable_list=['title', 'start_dt', 'end_dt', 'employees']
+    column_list = ['title','schedules','start_dt', 'end_dt', 'employees']
+    column_editable_list=['title', 'start_dt', 'end_dt', 'employees', 'schedules']
     edit_modal=True
 class EmployeeView(ModelView):
     column_list = ['username', 'shifts', 'email']
-    column_editable_list=['username', 'email']
+    column_editable_list=['username', 'email', 'shifts']
     edit_modal=True
 
 admin.add_view(ScheduleView(Schedule, db.session))
@@ -96,7 +99,8 @@ def schedule2():
     WEEKS_IN_MONTH = 4
     month = dateutils.get_workweeks(WEEKS_IN_MONTH)
     shifts = Shift.query.all()
-    return (render_template('schedule.html',shifts=shifts,month=month, weekdays=month[0]))
+    today = datetime.date.today()
+    return (render_template('schedule.html',shifts=shifts,month=month, weekdays=month[0], today=today   ))
 
 #which schedule
 #change back to filter - is this a jinja error because of query object?
