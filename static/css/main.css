@@ -1,12 +1,7 @@
-body {
-    background-color: burlywood;
+.nav-link {
+    color: black;
+    font-size: medium;
 }
-
-.t1, th, td {
-    border: 1px solid black;
-}
-.content, table {
-    margin: auto;
-    width: 50%;
-    text-align: center;
+* {
+    font-family: 'Courier New', Courier, monospace;
 }
