@@ -17,15 +17,15 @@
             <tr>
             {% for day in week %}
                 {% if day == today %}
-                    <td class='highlight'>
+                    <td class='text-center ' id='today'>
                 {% else %}
-                    <td style='white-space:nowrap;'>
+                    <td class='text-center ' style='white-space:nowrap;'>
                 {% endif %}
                     {{day.strftime("%b")}} {{day.day}}
                     {% for shift in shifts %}
                         {% if shift.start_dt.day == day.day %}
                         <br>
-                        <div class="alert alert-warning" role="alert">
+                        <div class="text-center font-weight-bold bg-warning pos">
                               {{shift.title}}
                         </div>
                             {% for emp in shift.employees %}

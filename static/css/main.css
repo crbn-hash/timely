@@ -5,3 +5,21 @@
 * {
     font-family: 'Courier New', Courier, monospace;
 }
+body {
+    padding-top: 90px;
+}          
+table {
+    table-layout: fixed ;
+    width: 100% ;
+    box-shadow: 10px 10px grey;
+  }
+td {
+    width: 14% ;
+    font-size: small;
+}  
+.pos {
+    color: #694ef0
+}                   
+#today {
+    border: thick inset #694ef0;
+}
