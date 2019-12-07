@@ -25,18 +25,22 @@
         {% include 'messages.html' %}
         {% block body %} 
         <div class='row'>
-            <div class='col-lg-2'>
-                {% block leftbody %}
-                {% include 'leftbody.html' %}
-                {% endblock %}
+            <div class='col-lg-2 h-200 lb'>
+                    {% block leftbody %}
+                    {% include 'leftbody.html' %}
+                    {% endblock %}
             </div>
-            <div class='col-lg-10'>
-                {% block rightbody %}
-                {% endblock %}
+            <div class='col-lg-1'>
+                
+            </div>
+            <div class='col-lg-9'>
+                    {% block rightbody %}
+                    {% endblock %}
             </div>
         </div>
         {% endblock %}
         {% include 'footer.html' %}
+        </div>
     </div>
 </body>
 

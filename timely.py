@@ -17,7 +17,29 @@ admin = Admin(app)
 
 shift_employee_table = db.Table('shift-employees', db.Column('shift_id',db.Integer(), db.ForeignKey('shift.id')), db.Column('employee_id',db.Integer(), db.ForeignKey('employee.id')))
 schedule_shift_table = db.Table('schedule-shifts', db.Column('schedule_id', db.Integer(), db.ForeignKey('schedule.id')), db.Column('shift_id', db.Integer(), db.ForeignKey('shift.id')))
+class WorkWeek(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    title = db.Column(db.String(80))
+    workdays = db.relationship(
+        'WorkDay',
+        backref='workweek'
+        #lazy='dynamic'
+    )
+    def __init__(self,title):
+        self.title = title
+    def __repr__(self):
+        return "<WorkWeek '{}'>".format(self.title)
+    
 
+class WorkDay(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    title = db.Column(db.String())
+    date = db.Column(db.Date())
+
+    def __init__(self,title):
+        self.title = title
+    def __repr__(self):
+        return "<WorkWeek '{}', '{}'>".format(self.title, self.date)
 class Employee(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     username = db.Column(db.String(255), unique=True)#notnull
@@ -50,8 +72,8 @@ class Schedule(db.Model):
 class Shift(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     title = db.Column(db.String(255))#notnull
-    start_dt = db.Column(db.DateTime())#notnull
-    end_dt = db.Column(db.DateTime())#notnull
+    start_dt = db.Column(db.Time())#notnull
+    end_dt = db.Column(db.Time())#notnull
     #sqlite3 may not enforce this constraint - check to make sure prod db does
     schedule_id = db.Column(db.Integer(), db.ForeignKey('schedule.id'))
     

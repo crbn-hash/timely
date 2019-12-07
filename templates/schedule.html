@@ -7,19 +7,19 @@
 {% block rightbody %}
 
 <div class='content'>
-    <table class='table table-bordered table-secondary'>
+    <table class='table  table-secondary'>
         <tr>
         {% for date in weekdays %}
-            <th>{{date.strftime("%A")}}</th>
+            <th class='text-center'>{{date.strftime("%A")}}</th>
         {% endfor %}
         </tr>
         {% for week in month %}
             <tr>
             {% for day in week %}
                 {% if day == today %}
-                    <td class='text-center ' id='today'>
+                    <td class='text-center' id='today'>
                 {% else %}
-                    <td class='text-center ' style='white-space:nowrap;'>
+                    <td class='text-center '>
                 {% endif %}
                     {{day.strftime("%b")}} {{day.day}}
                     {% for shift in shifts %}
