@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="352mm"
+   height="265mm"
+   viewBox="0 0 352 265"
+   version="1.1"
+   id="svg5126"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   sodipodi:docname="self_grph4.svg">
+  <defs
+     id="defs5120">
+    <linearGradient
+       id="linearGradient6203"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#adad4e;stop-opacity:1;"
+         offset="0"
+         id="stop6201" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffc107"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.41293931"
+     inkscape:cx="738.49191"
+     inkscape:cy="499.57113"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="false"
+     inkscape:object-nodes="true"
+     inkscape:snap-nodes="false"
+     inkscape:snap-others="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="755"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5123">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-32)">
+    <path
+       style="fill:#030303;fill-opacity:1;stroke-width:0.32697842"
+       d="M 175.48754,62.843047 A 103.56547,103.56547 0 0 0 71.922289,166.40882 a 103.56547,103.56547 0 0 0 1.27486,15.69103 111.50298,47.624999 0 0 1 104.108371,-30.81053 l 37.63801,-41.89201 a 27.224696,45.029916 0 0 0 -1.66966,15.41818 27.224696,45.029916 0 0 0 1.495,14.51333 45.584482,21.2804 0 0 0 -20.13779,12.60284 111.50298,47.624999 0 0 1 83.60471,26.79837 103.56547,103.56547 0 0 0 0.81752,-12.32121 A 103.56547,103.56547 0 0 0 175.48754,62.843047 Z m 11.45977,102.274893 a 71.954577,46.538128 0 0 0 -6.92826,19.69389 71.954577,46.538128 0 0 0 1.42575,8.96431 l -51.46972,14.70866 -4.10518,0.0532 38.99452,-43.402 a 98.651792,32.127975 0 0 0 -87.650461,31.88852 98.651792,32.127975 0 0 0 98.651851,32.12827 98.651792,32.127975 0 0 0 98.65186,-32.12827 98.651792,32.127975 0 0 0 -87.57036,-31.90658 z m -92.763331,65.41823 a 103.56547,103.56547 0 0 0 73.744331,39.05136 V 246.33055 A 111.50298,47.624999 0 0 1 94.183979,230.53617 Z m 160.388661,2.72645 a 111.50298,47.624999 0 0 1 -73.79343,13.22916 v 23.21667 a 103.56547,103.56547 0 0 0 73.79343,-36.44583 z"
+       id="path5717"
+       inkscape:connector-curvature="0" />
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.26458332"
+       id="path5804"
+       cx="-129.18098"
+       cy="293.08542"
+       r="0" />
+    <rect
+       style="fill:none;fill-rule:evenodd;stroke-width:0.45411751"
+       id="rect5931"
+       width="216.42007"
+       height="138.68781"
+       x="-199.08411"
+       y="133.7063" />
+    <path
+       style="opacity:1;vector-effect:none;fill:none;fill-opacity:0;stroke:#f815ea;stroke-width:7.98843384;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.99526068"
+       d=""
+       id="path6173"
+       inkscape:connector-curvature="0"
+       transform="matrix(0.26458333,0,0,0.26458333,0,87)" />
+    <ellipse
+       style="opacity:1;fill:#020202;fill-opacity:0.95734594;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.99526068"
+       id="path6281"
+       cx="26.089796"
+       cy="146.617"
+       rx="13.470385"
+       ry="13.844562" >
+
+         <animateTransform id='c1'
+            attributeName='transform'
+            attributeType='XML'
+            type='translate'
+            dur='3s'
+            values='0,25;0,-25;0,25'
+            repeatCount='indefinite'
+            />
+
+
+       </ellipse>
+    <ellipse
+       style="opacity:1;fill:#020202;fill-opacity:0.95734594;stroke:#000000;stroke-width:1.21590614;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.99526068"
+       id="path6283"
+       cx="41.587498"
+       cy="109.7499"
+       rx="12.611574"
+       ry="11.489041" >
+            
+            <animateTransform id='c1'
+            attributeName='transform'
+            attributeType='XML'
+            type='translate'
+            dur='2s'
+            values='0,25;0,-25;0,25'
+            repeatCount='indefinite'
+            />
+
+       
+       </ellipse>
+    <ellipse
+       style="opacity:1;fill:#020202;fill-opacity:0.95734594;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.99526068"
+       id="path6285"
+       cx="65.537346"
+       cy="82.031998"
+       rx="8.9802551"
+       ry="8.2319012" >
+       
+            <animateTransform id='c1'
+            attributeName='transform'
+            attributeType='XML'
+            type='translate'
+            dur='1s'
+            values='0,25;0,-25;0,25'
+            repeatCount='indefinite'
+            />
+       
+       
+       
+       </ellipse>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Layer 5"
+     transform="translate(0,55)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2"
+     transform="translate(0,55)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Layer 3"
+     transform="translate(0,55)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Layer 4"
+     transform="translate(0,55)" />
+</svg>
